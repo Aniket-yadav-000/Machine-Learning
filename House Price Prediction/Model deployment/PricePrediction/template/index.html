@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Rent Apt Price</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Apartment Price Prediction</div>
+      <form action="{{url_for('predict')}}" method="post">
+        <div class="details">
+          <div class="input-box">
+            <span class="details">AREA</span>
+            <input
+              type="text"
+              name="area"
+              placeholder="Area in SQ.Ft"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">ROOMS</span>
+            <input
+              type="text"
+              name="rooms"
+              placeholder="No. of rooms"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="button">
+          <input type="submit" value="predict" />
+        </div>
+      </form>
+      <br /><b>Prediction: {{Prediction_text}} </b><br />
+    </div>
+  </body>
+</html>
