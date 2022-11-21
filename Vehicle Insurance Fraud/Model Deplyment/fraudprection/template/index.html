@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Insurance Fraud Prediction</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Insurance Fraud Prediction</div>
+      <form action="{{url_for('predict')}}" method="post">
+        <div class="details">
+          <div class="input-box">
+            <span class="details">number_of_vehicles_involved</span>
+            <input
+              type="text"
+              name="number_of_vehicles_involved"
+              placeholder="number_of_vehicles_involved"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">bodily_injuries</span>
+            <input
+              type="text"
+              name="bodily_injuries"
+              placeholder="No. of bodily_injuries"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">witnesses</span>
+            <input
+              type="text"
+              name="witnesses"
+              placeholder="witnesses"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">injury_claim</span>
+            <input
+              type="text"
+              name="injury_claim"
+              placeholder="injury_claim"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">property_claim</span>
+            <input
+              type="text"
+              name="property_claim"
+              placeholder="property_claim"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">vehicle_claim</span>
+            <input
+              type="text"
+              name="vehicle_claim"
+              placeholder="vehicle_claim"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">insured_sex</span>
+            <input
+              type="text"
+              name="insured_sex"
+              placeholder="Gender"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">property_damage</span>
+            <input
+              type="text"
+              name="property_damage"
+              placeholder="property_damage"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">police_report_available</span>
+            <input
+              type="text"
+              name="police_report_available"
+              placeholder="police_report_available"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="button">
+          <input type="submit" value="predict" />
+        </div>
+      </form>
+      <br /><b>Prediction: {{Prediction_text}} </b><br />
+    </div>
+  </body>
+</html>
